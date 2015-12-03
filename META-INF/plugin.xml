@@ -1,0 +1,55 @@
+<idea-plugin version="2">
+  <id>com.bobz.OpenTerminalHere</id>
+  <name>Open Terminal Here</name>
+  <version>1.0</version>
+  <vendor email="zhaohevip@gmail.com" url="https://github.com/BobZhao">SHB</vendor>
+
+  <description><![CDATA[
+      An IntelliJ plugin for opening current directory in terminal.<br>
+      Source code: https://github.com/BobZhao/OpenTerminalHere
+    ]]></description>
+
+  <change-notes><![CDATA[
+      ## Usage<br>
+        Right click on target file or directory in Project view, then select Open Terminal Here.<br>
+
+      ## Compatibility<br>
+        Mac and Win platforms are supported temporarily.<br>
+
+      ## Shortcut Key<br>
+        * Mac: ⌘ + option + T<br>
+        * Win: ctrl + alt + T<br>
+
+    ]]>
+  </change-notes>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <action id="com.bobz.action.OpenTerminalHereAction" class="com.bobz.action.OpenTerminalHereAction"
+            text="Open Terminal Here" description="Open Terminal Here">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="RevealIn"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt T"/>
+    </action>
+  </actions>
+
+</idea-plugin>

@@ -1,0 +1,4 @@
+# paths ignored
+/.idea
+/out
+.DS_Store

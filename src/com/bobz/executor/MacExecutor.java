@@ -9,6 +9,7 @@ public class MacExecutor extends CommandExecutor {
 
     private static final String MAC_TERMINAL = "/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal";
     private static final String ITERM        = "/Applications/iTerm.app/Contents/MacOS/iTerm";
+    private static final String ITERM2       = "/Applications/iTerm.app/Contents/MacOS/iTerm2";
 
     public MacExecutor(String targetPath) {
         setTargetPath(targetPath);
@@ -19,6 +20,9 @@ public class MacExecutor extends CommandExecutor {
 
         if (isTerminalInstalled(ITERM)) {
             return ITERM;
+        }
+        else if (isTerminalInstalled(ITERM2)) {
+            return ITERM2;
         }
 
         return MAC_TERMINAL;

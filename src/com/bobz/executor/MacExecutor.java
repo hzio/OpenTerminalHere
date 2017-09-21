@@ -1,5 +1,9 @@
 package com.bobz.executor;
 
+import org.apache.commons.lang.StringUtils;
+
+import com.bobz.configuration.Configuration;
+
 /**
  * Author: BobZhao
  * Date:   12/2/15 18:42
@@ -17,6 +21,10 @@ public class MacExecutor extends CommandExecutor {
 
     @Override
     public String getTerminalPath() {
+
+        if (!StringUtils.isBlank(Configuration.TERM_PATH)) {
+            return Configuration.TERM_PATH;
+        }
 
         if (isTerminalInstalled(ITERM)) {
             return ITERM;
